@@ -1,3 +1,4 @@
+#!/bin/env bash
 username () {
 	echo "\e[${USERNAME_COL}m\u\e[0m"
 }
