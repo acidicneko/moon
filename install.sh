@@ -1,22 +1,23 @@
-echo " __  __  ___   ___  _   _"
-echo "|  \/  |/ _ \ / _ \| \ | |"
-echo "| |\/| | | | | | | |  \| |"
-echo "| |  | | |_| | |_| | |\  |"
-echo "|_|  |_|\___/ \___/|_| \_|"
+printf "\e[1;34m __  __  ___   ___  _   _\n"
+printf "|  \/  |/ _ \ / _ \| \ | |\n"
+printf "| |\/| | | | | | | |  \| |\n"
+printf "| |  | | |_| | |_| | |\  |\n"
+printf "|_|  |_|\___/ \___/|_| \_|\n\n"
 
-echo "Moon Prompt Installer by CLAW (https://github.com/ayush7788)"
+printf "\e[1;37mMoon Prompt Installer by CLAW (https://github.com/ayush7788)\e[0m\n"
 
 dir=$HOME/.config/moon
 read -p "Install Moon to $HOME/.config/moon/ ? [y/n]: " choice
 
 if [[ "$choice" = "n" ]] ; then
-	read -p "Enter a location to install Moon to: " dir
+	printf "\e[31mInstall cancelled!\e[0m\n"
+	exit 1
 fi
 
-echo Installing Moon to $dir...
+printf "\e[1;33mInstalling Moon to $dir...\e[0m\n"
 
 git clone https://github.com/ayush7788/moon.git $dir
 
 echo . "$dir/moon.sh" >> $HOME/.bashrc
 
-echo Moon Prompt installed! Please restart BASH...
+printf "\e[1;32mMoon Prompt installed! Please restart BASH...\e[0m\n"
