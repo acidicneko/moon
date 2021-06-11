@@ -18,6 +18,6 @@ Moon is written completely in BASH which makes it faster than prompts written in
 
 ## Installation
 
-```
+```shell
 wget https://raw.githubusercontent.com/ayush7788/moon/main/install.sh && bash install.sh
 ```
