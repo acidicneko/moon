@@ -8,8 +8,13 @@ Moon is written completely in BASH which makes it faster than prompts written in
 ## In action
 ![Settings Window](https://raw.githubusercontent.com/ayush7788/moon/main/pics/moon.png)
 
+## Dependencies
+- wget (install only)
+- git (install only and for "git\_module" module)
+- Any Nerd Font
+
 ## Installation
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ayush7788/moon/main/install.sh)"
+wget https://raw.githubusercontent.com/ayush7788/moon/main/install.sh && bash install.sh
 ```
 
