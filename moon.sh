@@ -18,10 +18,10 @@ done
 
 ## Options provided by modules can be configures here
 # configuration for modules
-USERNAME_COL="1;37"
-HOSTNAME_COL="1;32"
-WORKING_DIR_COL="1;34"
-GIT_COL="1;36"
+export USERNAME_COL="1;37"
+export HOSTNAME_COL="1;32"
+export WORKING_DIR_COL="1;34"
+export GIT_COL="1;36"
 
 
 # include your modules here
