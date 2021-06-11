@@ -1,3 +1,4 @@
+#!/bin/env bash
 printf "\e[1;34m __  __  ___   ___  _   _\n"
 printf "|  \/  |/ _ \ / _ \| \ | |\n"
 printf "| |\/| | | | | | | |  \| |\n"
