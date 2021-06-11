@@ -12,7 +12,7 @@
 
 ## DO NOT PLAY WITH THIS TwT
 # include all module files
-for i in $HOME/.config/moon/modules/* ; do
+for i in "$HOME"/.config/moon/modules/* ; do
 	. "$i"
 done
 
