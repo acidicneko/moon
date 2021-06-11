@@ -13,7 +13,7 @@
 ## DO NOT PLAY WITH THIS TwT
 # include all module files
 for i in "$HOME"/.config/moon/modules/* ; do
-	. "$i"
+	source "$i"
 done
 
 ## Options provided by modules can be configures here
