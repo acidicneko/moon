@@ -1,3 +1,4 @@
+#!/bin/bash
 check_last_status_main () {
 	if [[ $? != 0 ]] ; then
 		echo " "
