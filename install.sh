@@ -15,7 +15,7 @@ if [[ "$choice" = "n" ]] ; then
 	exit 1
 fi
 
-printf "\e[1;33mInstalling Moon to $dir...\e[0m\n"
+printf "\e[1;33mInstalling Moon to %s...\e[0m\n" "$dir"
 
 git clone https://github.com/ayush7788/moon.git "$dir"
 
