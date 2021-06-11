@@ -17,8 +17,8 @@ fi
 
 printf "\e[1;33mInstalling Moon to $dir...\e[0m\n"
 
-git clone https://github.com/ayush7788/moon.git $dir
+git clone https://github.com/ayush7788/moon.git "$dir"
 
-echo . "$dir/moon.sh" >> $HOME/.bashrc
+echo . "$dir/moon.sh" >> "$HOME"/.bashrc
 
 printf "\e[1;32mMoon Prompt installed! Please restart BASH...\e[0m\n"
