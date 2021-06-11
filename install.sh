@@ -8,7 +8,7 @@ printf "|_|  |_|\___/ \___/|_| \_|\n\n"
 printf "\e[1;37mMoon Prompt Installer by CLAW (https://github.com/ayush7788)\e[0m\n"
 
 dir=$HOME/.config/moon
-read -p "Install Moon to $HOME/.config/moon/ ? [y/n]: " choice
+read -rp "Install Moon to $HOME/.config/moon/ ? [y/n]: " choice
 
 if [[ "$choice" = "n" ]] ; then
 	printf "\e[31mInstall cancelled!\e[0m\n"
