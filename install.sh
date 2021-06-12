@@ -16,8 +16,12 @@ fi
 
 printf "\e[1;33mInstalling Moon to $dir...\e[0m\n"
 
-git clone https://github.com/ayush7788/moon.git $dir
-
+if [ -d "$dir" ]; then
+	printf "\e[31mMoon is already installed!\e[0m\n"
+	exit 1
+else
+	git clone https://github.com/ayush7788/moon.git $dir
+fi
 echo . "$dir/moon.sh" >> $HOME/.bashrc
 
 printf "\e[1;32mMoon Prompt installed! Please restart BASH...\e[0m\n"
