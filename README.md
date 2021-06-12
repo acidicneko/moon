@@ -7,6 +7,8 @@ Moon is written completely in BASH which makes it faster than prompts written in
 
 ## In action
 ![Settings Window](https://raw.githubusercontent.com/ayush7788/moon/main/pics/moon.png)
+![Settings Window](https://raw.githubusercontent.com/ayush7788/moon/main/pics/IMG_20210612_193634.jpg)
+
 
 ## Dependencies
 - wget (install only)
