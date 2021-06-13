@@ -22,12 +22,16 @@ HOSTNAME_COL="1;32"
 WORKING_DIR_COL="1;34"
 GIT_COL="1;36"
 SHOW_EXIT_CODE=1
-LOW_BATTERY=20
+#LOW_BATTERY=20
 
 # include your modules here
 ## Non modular text can be also written here, eg, newlines, special characters, etc
+
+# Available Modules
+# username, hostname, working_dir
+# battery, git, check_last_status
 MODULES="\n\
-$(username)@$(hostname) | $(working_dir) $(git_module) $(check_last_status) | $(battery)\
+$(username)@$(hostname) | $(working_dir) $(git_module) $(check_last_status)\
 \nﰲ "
 
 prompt=$MODULES
