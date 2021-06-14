@@ -21,6 +21,7 @@ USERNAME_COL="1;37"
 HOSTNAME_COL="1;32"
 WORKING_DIR_COL="1;34"
 GIT_COL="1;36"
+DATE_COL="1;35"
 SHOW_EXIT_CODE=1
 #LOW_BATTERY=20
 
@@ -31,7 +32,7 @@ SHOW_EXIT_CODE=1
 # username, hostname, working_dir
 # battery, git, check_last_status
 MODULES="\n\
-$(username)@$(hostname) | $(working_dir) $(git_module) $(check_last_status)\
+$(username)@$(hostname) | $(working_dir) $(git_module) $(check_last_status) $(date_module) $(time_module)\
 \nﰲ "
 
 prompt=$MODULES

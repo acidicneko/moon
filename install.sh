@@ -21,7 +21,10 @@ if [ -d "$dir" ]; then
 	exit 1
 else
 	git clone https://github.com/ayush7788/moon.git $dir
+	wget https://github.com/ayush7788/moon/releases/download/v1.0.0-beta/mm -P "$dir"/bin/
+	chmod +x "$dir"/bin/mm
 fi
-echo . "$dir/moon.sh" >> $HOME/.bashrc
+echo "PATH=\"\$PATH:$dir/bin/\"" >> "$HOME"/.bashrc
+echo . "$dir/moon.sh" >> "$HOME"/.bashrc
 
 printf "\e[1;32mMoon Prompt installed! Please restart BASH...\e[0m\n"
