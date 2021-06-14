@@ -20,3 +20,7 @@ Moon is written completely in BASH which makes it faster than prompts written in
 wget https://raw.githubusercontent.com/ayush7788/moon/main/install.sh && bash install.sh
 ```
 
+## Modules for Moon
+[This repository](https://github.com/ayush7788/moon_modules] contains modules for Moon Prompt.
+It contains instructions for installing modules as well.
+
