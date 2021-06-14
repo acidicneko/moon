@@ -21,6 +21,6 @@ wget https://raw.githubusercontent.com/ayush7788/moon/main/install.sh && bash in
 ```
 
 ## Modules for Moon
-[This repository](https://github.com/ayush7788/moon_modules] contains modules for Moon Prompt.
+[This repository](https://github.com/ayush7788/moon_modules) contains modules for Moon Prompt.
 It contains instructions for installing modules as well.
 
