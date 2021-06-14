@@ -11,13 +11,18 @@ Moon is written completely in BASH which makes it faster than prompts written in
 
 
 ## Dependencies
-- wget (install only)
+- wget or curl (wget recommended, as `mm` uses wget to fetch modules)
 - git (install only and for "git\_module" module)
 - Any Nerd Font (eg. Iosevka Nerd Font)
 
 ## Installation
+With `curl`
 ```
-wget https://raw.githubusercontent.com/ayush7788/moon/main/install.sh && bash install.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ayush7788/moon/main/install.sh)"
+```
+or with `wget`
+```
+bash -c "$(wget -qO- https://raw.githubusercontent.com/ayush7788/moon/main/install.sh)"
 ```
 
 ## Modules for Moon
