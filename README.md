@@ -47,7 +47,7 @@ To install the module `battery`, you have to install `battery.sh` set.
 
 First update the database with -
 ```shell
-mm -p
+mm -u
 ```
 
 Then to install a set do - 
