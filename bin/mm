@@ -128,6 +128,7 @@ update_self () {
 	printf "\e[32mmm: updating mm itself...\n\e[0m"
 	rm "$prefix"/bin/mm
 	wget "https://raw.githubusercontent.com/ayush7788/moon/main/bin/mm" -P "$prefix"/bin/
+	chmod +x "$prefix"/bin/mm
 	printf "updated!!\n\n"
 }
 
@@ -145,6 +146,8 @@ elif [ "$1" = "-r" ] ; then
 	uninstall "$2"
 elif [ "$1" = "-u" ] ; then
 	update_database
+elif [ "$1" = "-su" ] ; then
+	update_self
 elif [ "$1" = "-h" ] ; then
 	help_mm
 else
