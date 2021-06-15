@@ -1,0 +1,8 @@
+git git.sh 1
+battery battery.sh 1
+time date.sh 1
+date date.sh 1
+username basics.sh 1
+hostname basics.sh 1
+working_dir basics.sh 1
+check_last_status last_status.sh 2

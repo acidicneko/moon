@@ -1,0 +1,153 @@
+#!/bin/bash
+#
+# __  __  ___   ___  _   _
+#|  \/  |/ _ \ / _ \| \ | |
+#| |\/| | | | | | | |  \| |
+#| |  | | |_| | |_| | |\  |
+#|_|  |_|\___/ \___/|_| \_|
+# Moon Manager by CLAW (https://github.com/ayush7788)
+
+
+repo="https://raw.githubusercontent.com/ayush7788/moon_modules/main/modules"
+data_repo="https://raw.githubusercontent.com/ayush7788/moon/main/database"
+prefix="$HOME/.config/moon"
+VERSION=1.0.1
+
+help_mm () {
+	printf "Moon Manager Utility by CLAW (https://github.com)\n\
+\noption: usage\n\n\
+-s: search in database\n\
+-i: install a set from database\n\
+-r: uninstall a set\n\
+-l: list all installed sets\n\
+-la: list the whole database\n\
+-u: update database\n\
+-su: update mm itself\n\
+-v: prints version information\n\
+-h: bring up help\n\n"
+}
+
+search () {
+	test -f "$prefix"/database/db
+	if [ $? = 1 ] ; then
+		printf "\e[31mmm: database file not found! run \"mm -u\" to download database\n\e[0m"
+		return 1
+	fi
+	result="$(cat "$prefix"/database/db | grep $1)"
+	if [ "$result" = "" ] ; then
+		printf "\e[31mmm: no such module or set in database: %s\n" "$1"
+		return 1
+	fi
+	IFS=' '
+	read -a tokens <<< "$result"
+	echo "Module: ${tokens[0]}"
+	echo "Set: ${tokens[1]}"
+	echo "Version: ${tokens[2]}"
+	return 0
+}
+
+search_set () {
+	test -f "$prefix"/database/db
+	if [ $? = 1 ] ; then
+		printf "\e[31mmm: database file not found! run \"mm -u\" to dowload database\n\e[0m"
+		return 1
+	fi
+	result="$(cat "$prefix"/database/db | grep $1)"
+	if [ "$result" = "" ] ; then
+		printf "\e[31mmm: no such module or set in database: %s\n" "$1"
+		return 1
+	fi
+	IFS=' '
+	read -a tokens <<< "$result"
+	if [ "${tokens[1]}" != "$1" ] ; then
+		printf "\e[31mmm: no such set found in database: %s\n\e[0m" "$1"
+		return 1
+	fi
+	return 0
+}
+
+install () {
+	printf "\e[32mmm: installing set \"%s\"...\n\e[0m" "$1"	
+	search_set "$1"
+	if [ $? = 1 ] ; then
+		printf "\e[31mmm: error\e[0m\n"
+		return 1		
+	fi
+	test -f "$prefix"/modules/"$1"
+	if [ $? = 0 ] ; then
+		printf "\e[32mmm: set already installed!\n\e[0m" "$1"
+		return 2
+	fi
+	printf "\e[32mmm: downloading set: %s...\n\e[0m" "$1"
+	
+	wget "$repo"/"$1" -P "$prefix"/modules/
+	
+	if [ $? != 0 ] ; then
+		printf "\e[31mmm: something went wrong during installing set: %s\n\e[0m" "$1"
+		return 1
+	fi
+	printf "\e[32mmm: set \"%s\" installed!\n\e[0m" "$1"
+}
+
+list_installed () {
+	printf "\e[32mmm: installed sets -> \n\e[0m"
+	for i in "$prefix"/modules/* ; do
+		echo "$i"
+	done
+}
+
+uninstall () {
+	test -f "$prefix"/modules/"$1"
+	if [ $? = 1 ] ; then
+		printf "\e[31mmm: no such module installed: %s\e[0m\n" "$1"
+		return 1
+	fi
+	rm "$prefix"/modules/"$1"
+	if [ $? != 0 ] ; then
+		printf "\e[31mmm: something went wrong while removing set: %s\e[0m\n" "$1"
+		return 1
+	fi
+	printf "\e[32mmm: set uninstalled: %s\n\e[0m" "$1"
+}
+
+update_database () {
+	printf "\e[32mmm: updating database...\n\e[0m"
+	test -f "$prefix"/database/db
+	if [ $? = 0 ] ; then
+		rm "$prefix"/database/db
+	fi
+	wget "$data_repo"/db -P "$prefix"/database/
+	if [ $? != 0 ] ; then
+		printf "\e[31mmm: something went wrong during updating database\n\e[0m"
+	return 1
+	fi
+	printf "\e[32mmm: database updated!\n\e[0m"
+}
+
+update_self () {
+	printf "\e[32mmm: updating mm itself...\n\e[0m"
+	rm "$prefix"/bin/mm
+	wget "https://raw.githubusercontent.com/ayush7788/moon/main/bin/mm" -P "$prefix"/bin/
+	printf "updated!!\n\n"
+}
+
+if [ "$1" = "-s" ] ; then
+	search "$2"
+elif [ "$1" = "-i" ] ; then
+	install "$2"
+elif [ "$1" = "-v" ]  ; then
+	printf "Moon Manager v%s\nBy CLAW (https://github.com/ayush7788)\n" "$VERSION"
+elif [ "$1" = "-l" ] ; then
+	list_installed
+elif [ "$1" = "-la" ] ; then
+	cat db
+elif [ "$1" = "-r" ] ; then
+	uninstall "$2"
+elif [ "$1" = "-u" ] ; then
+	update_database
+elif [ "$1" = "-h" ] ; then
+	help_mm
+else
+	printf "\e[31mmm: unknow option: %s\e[0m\n" "$1"
+fi
+
