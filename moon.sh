@@ -17,24 +17,21 @@ done
 
 ## Options provided by modules can be configures here
 # configuration for modules
-USERNAME_COL="1;37"
-HOSTNAME_COL="1;32"
-WORKING_DIR_COL="1;34"
-GIT_COL="1;36"
-DATE_COL="1;35"
-SHOW_EXIT_CODE=1
-#LOW_BATTERY=20
+USERNAME_COL="1;37"	# controls username module color
+HOSTNAME_COL="1;32"	# controls hostname module color
+WORKING_DIR_COL="1;34"	# controls workind_dir module color
+GIT_COL="1;36"		# controls git_module module color
+DATE_COL="1;35"		# controls date_module & time_module colors
+SHOW_EXIT_CODE=1	# defines if exit code should be shown (1 = true, 0 = false)
+CMD_DURATION_COL="1;33"	# controls cmd_duration module col
+#LOW_BATTERY=20		# controls low battery warning level
 
 # include your modules here
 ## Non modular text can be also written here, eg, newlines, special characters, etc
-
-# Available Modules
-# username, hostname, working_dir
-# battery, git, check_last_status
 MODULES="\n\
-$(username)@$(hostname) | $(working_dir) $(check_last_status)\
-\n>> "
+ $(username)@$(hostname) | $(working_dir) $(check_last_status)\
+\n  "
 
-prompt=$MODULES
+prompt="$MODULES"
 
-export PS1=$prompt
+export PS1="$prompt"

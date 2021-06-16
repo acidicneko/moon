@@ -6,3 +6,4 @@ username basics.sh 1
 hostname basics.sh 1
 working_dir basics.sh 1
 check_last_status last_status.sh 2
+cmd_duration cmd_duration.sh 1
