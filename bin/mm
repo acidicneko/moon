@@ -11,7 +11,7 @@
 repo="https://raw.githubusercontent.com/ayush7788/moon_modules/main/modules"
 data_repo="https://raw.githubusercontent.com/ayush7788/moon/main/database"
 prefix="$HOME/.config/moon"
-VERSION=1.0.1
+VERSION=1.0.2
 
 help_mm () {
 	printf "Moon Manager Utility by CLAW (https://github.com)\n\
@@ -141,7 +141,7 @@ elif [ "$1" = "-v" ]  ; then
 elif [ "$1" = "-l" ] ; then
 	list_installed
 elif [ "$1" = "-la" ] ; then
-	cat db
+	cat "$PREFIX"/database/db
 elif [ "$1" = "-r" ] ; then
 	uninstall "$2"
 elif [ "$1" = "-u" ] ; then
