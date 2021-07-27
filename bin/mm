@@ -141,7 +141,7 @@ elif [ "$1" = "-v" ]  ; then
 elif [ "$1" = "-l" ] ; then
 	list_installed
 elif [ "$1" = "-la" ] ; then
-	cat "$PREFIX"/database/db
+	cat "$prefix"/database/db
 elif [ "$1" = "-r" ] ; then
 	uninstall "$2"
 elif [ "$1" = "-u" ] ; then
