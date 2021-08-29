@@ -4,7 +4,7 @@ printf "| |\/| | | | | | | |  \| |\n"
 printf "| |  | | |_| | |_| | |\  |\n"
 printf "|_|  |_|\___/ \___/|_| \_|\n\n"
 
-printf "\e[1;37mMoon Prompt Installer by CLAW (https://github.com/ayush7788)\e[0m\n"
+printf "\e[1;37mMoon Prompt Installer by CLAW (https://github.com/clawbhaiya)\e[0m\n"
 
 dir=$HOME/.config/moon
 read -p "Install Moon to $dir ? [y/n]: " choice
@@ -20,7 +20,7 @@ if [ -d "$dir" ]; then
 	printf "\e[31mMoon is already installed!\e[0m\n"
 	exit 1
 else
-	git clone https://github.com/ayush7788/moon.git $dir
+	git clone https://github.com/clawbhaiya/moon.git $dir
 	chmod +x "$dir"/bin/mm
 fi
 echo "PATH=\"\$PATH:$dir/bin/\"" >> "$HOME"/.bashrc
