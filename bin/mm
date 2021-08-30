@@ -5,16 +5,16 @@
 #| |\/| | | | | | | |  \| |
 #| |  | | |_| | |_| | |\  |
 #|_|  |_|\___/ \___/|_| \_|
-# Moon Manager by CLAW (https://github.com/ayush7788)
+# Moon Manager by CLAW (https://github.com/clawbhaiya)
 
 
-repo="https://raw.githubusercontent.com/ayush7788/moon_modules/main/modules"
-data_repo="https://raw.githubusercontent.com/ayush7788/moon/main/database"
+repo="https://raw.githubusercontent.com/clawbhaiya/moon_modules/main/modules"
+data_repo="https://raw.githubusercontent.com/clawbhaiya/moon/main/database"
 prefix="$HOME/.config/moon"
 VERSION=1.0.2
 
 help_mm () {
-	printf "Moon Manager Utility by CLAW (https://github.com)\n\
+	printf "Moon Manager Utility by CLAW (https://github.com/clawbhaiya)\n\
 \noption: usage\n\n\
 -s: search in database\n\
 -i: install a set from database\n\
@@ -127,7 +127,7 @@ update_database () {
 update_self () {
 	printf "\e[32mmm: updating mm itself...\n\e[0m"
 	rm "$prefix"/bin/mm
-	wget "https://raw.githubusercontent.com/ayush7788/moon/main/bin/mm" -P "$prefix"/bin/
+	wget "https://raw.githubusercontent.com/clawbhaiya/moon/main/bin/mm" -P "$prefix"/bin/
 	chmod +x "$prefix"/bin/mm
 	printf "updated!!\n\n"
 }
@@ -137,7 +137,7 @@ if [ "$1" = "-s" ] ; then
 elif [ "$1" = "-i" ] ; then
 	install "$2"
 elif [ "$1" = "-v" ]  ; then
-	printf "Moon Manager v%s\nBy CLAW (https://github.com/ayush7788)\n" "$VERSION"
+	printf "Moon Manager v%s\nBy CLAW (https://github.com/clawbhaiya)\n" "$VERSION"
 elif [ "$1" = "-l" ] ; then
 	list_installed
 elif [ "$1" = "-la" ] ; then

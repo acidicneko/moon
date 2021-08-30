@@ -3,7 +3,7 @@
 # | |\/| | | | | | | |  \| |
 # | |  | | |_| | |_| | |\  |
 # |_|  |_|\___/ \___/|_| \_|
-# Moon Prompt for BASH by CLAW (https://github.com/ayush7788)
+# Moon Prompt for BASH by CLAW (https://github.com/clawbhaiya)
 #
 ## A set of basic modules have been provided.
 ## To make your own modules check the documentation
