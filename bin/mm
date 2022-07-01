@@ -8,13 +8,13 @@
 # Moon Manager by CLAW (https://github.com/clawbhaiya)
 
 
-repo="https://raw.githubusercontent.com/clawbhaiya/moon_modules/main/modules"
-data_repo="https://raw.githubusercontent.com/clawbhaiya/moon/main/database"
+repo="https://raw.githubusercontent.com/acidicneko/moon_modules/main/modules"
+data_repo="https://raw.githubusercontent.com/acidicneko/moon/main/database"
 prefix="$HOME/.config/moon"
-VERSION=1.0.2
+VERSION=1.0.5
 
 help_mm () {
-	printf "Moon Manager Utility by CLAW (https://github.com/clawbhaiya)\n\
+	printf "Moon Manager Utility by Acidicneko (https://github.com/acidicneko)\n\
 \noption: usage\n\n\
 -s: search in database\n\
 -i: install a set from database\n\
@@ -80,7 +80,7 @@ install () {
 	fi
 	printf "\e[32mmm: downloading set: %s...\n\e[0m" "$1"
 	
-	wget "$repo"/"$1" -P "$prefix"/modules/
+	curl "$repo"/"$1" --output "$prefix"/modules/"$1"
 	
 	if [ $? != 0 ] ; then
 		printf "\e[31mmm: something went wrong during installing set: %s\n\e[0m" "$1"
