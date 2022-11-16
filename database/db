@@ -7,3 +7,5 @@ hostname basics.sh 1
 working_dir basics.sh 1
 check_last_status last_status.sh 2
 cmd_duration cmd_duration.sh 1
+modern_prompt modern_prompt.sh 1
+modern_dir modern_prompt.sh 1
